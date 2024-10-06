@@ -32,7 +32,7 @@ Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya ha
  ```
 Pastikan anda sudah login sebagai root sebelum menjalankan perintah dibawah
  ```html
- wget https://raw.githubusercontent.com/raffasyaa/Semvak/main/mar.sh && chmod +x mar.sh && ./mar.sh
+ wget https://raw.githubusercontent.com/raffasyaa/Semvak/main/tytyd.sh && chmod +x tytyd.sh && ./tytyd.sh
  ```
 
 Buka panel Marzban dengan mengunjungi https://domainmu:port/dashboard <br>
