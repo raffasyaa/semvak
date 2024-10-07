@@ -49,7 +49,7 @@ fi
 
 # Fungsi untuk menambahkan repo Debian 11
 addDebian11Repo() {
-    echo "#mirror_kambing-sysadmind deb11
+    echo "
 deb http://kartolo.sby.datautama.net.id/debian bullseye main contrib non-free
 deb http://kartolo.sby.datautama.net.id/debian bullseye-updates main contrib non-free
 deb http://kartolo.sby.datautama.net.id/debian-security bullseye-security main contrib non-free" | sudo tee /etc/apt/sources.list > /dev/null
@@ -57,12 +57,12 @@ deb http://kartolo.sby.datautama.net.id/debian-security bullseye-security main c
 
 # Fungsi untuk menambahkan repo Ubuntu 20.04
 addUbuntu2004Repo() {
-    echo "#mirror buaya klas 20.04
-deb https://buaya.klas.or.id/ubuntu/ focal main restricted universe multiverse
-deb https://buaya.klas.or.id/ubuntu/ focal-updates main restricted universe multiverse
-deb https://buaya.klas.or.id/ubuntu/ focal-security main restricted universe multiverse
-deb https://buaya.klas.or.id/ubuntu/ focal-backports main restricted universe multiverse
-deb https://buaya.klas.or.id/ubuntu/ focal-proposed main restricted universe multiverse" | sudo tee /etc/apt/sources.list > /dev/null
+    echo "
+deb http://kartolo.sby.datautama.net.id/ubuntu/ focal main restricted universe multiverse 
+deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-updates main restricted universe multiverse
+deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-security main restricted universe multiverse
+deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-backports main restricted universe multiverse
+deb http://kartolo.sby.datautama.net.id/ubuntu/ focal-proposed main restricted universe multiverse" | sudo tee /etc/apt/sources.list > /dev/null
 }
 
 # Mendapatkan informasi kode negara dan OS
@@ -245,7 +245,7 @@ wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/raffasyaa/sem
 wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/vps.conf"
 wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/xray.conf"
 mkdir -p /var/www/html
-echo "<pre>Setup by AutoScript LingVPN</pre>" > /var/www/html/index.html
+echo "<pre>Setup by AutoScript Semvak</pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
@@ -297,13 +297,13 @@ echo "-=================================-" | tee -a log-install.txt
 echo "Data login dashboard Marzban: " | tee -a log-install.txt
 echo "-=================================-" | tee -a log-install.txt
 echo "URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
-echo "URL HTTP  : http://${domain}:${port}/dashboard" | tee -a log-install.txt
-echo "username  : ${userpanel}" | tee -a log-install.txt
-echo "password  : ${passpanel}" | tee -a log-install.txt
+echo "URL HTTP   : http://${domain}:${port}/dashboard" | tee -a log-install.txt
+echo "USERNAME  : ${userpanel}" | tee -a log-install.txt
+echo "PASSWORD  : ${passpanel}" | tee -a log-install.txt
 echo "-=================================-" | tee -a log-install.txt
 colorized_echo green "Script telah berhasil di install Semvak"
 rm /root/tytyd.sh
-colorized_echo blue "Menghapus admin bawaan db.sqlite"
+colorized_echo blue "Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
 echo -e "[\e[1;31mWARNING\e[0m] Reboot dulu semvak biar gk error [default y] (y/n)? "
 read answer
