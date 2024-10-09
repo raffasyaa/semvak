@@ -28,28 +28,12 @@ Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya ha
 
 # Instalasi
   ```html
- apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && reboot
+ DM @SaputraTech
  ```
 Pastikan anda sudah login sebagai root sebelum menjalankan perintah dibawah
  ```html
- wget https://raw.githubusercontent.com/raffasyaa/Semvak/main/tytyd.sh && chmod +x tytyd.sh && ./tytyd.sh
+ DM @SaputraTech
  ```
 
 Buka panel Marzban dengan mengunjungi https://domainmu:port/dashboard <br>
 
-Jika ingin mengubah konfigurasi env variable 
-```html
-nano /opt/marzban/.env
- ```
-Perintah Restart service Marzban 
-```html
-marzban restart
- ```
-Perintah Cek Logs service Marzban 
-```html
-marzban logs
- ```
-Perintah Cek update service Marzban
-```html
-marzban update
- ```
