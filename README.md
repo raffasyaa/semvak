@@ -11,7 +11,8 @@ Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya ha
 - [Gozargah](https://github.com/Gozargah/Marzban)
 - [hamid-gh98](https://github.com/hamid-gh98)
 - [x0sina](https://github.com/x0sina/marzban-sub)
-
+- [Eko-Ling](https://t.me/EkoLing)
+- 
 # List Protocol yang support
 - VLess
 - VMess
