@@ -22,6 +22,7 @@ colorized_echo() {
     esac
 }
 
+
 # Check if the script is run as root
 if [ "$(id -u)" != "0" ]; then
     colorized_echo red "Error: Skrip ini harus dijalankan sebagai root."
@@ -293,19 +294,19 @@ sed -i "s/SUDO_PASSWORD = \"${passpanel}\"/# SUDO_PASSWORD = \"admin\"/" /opt/ma
 docker compose down && docker compose up -d
 cd
 profile
-echo "-=================================-" | tee -a log-install.txt
-echo "Data login dashboard Marzban: " | tee -a log-install.txt
-echo "-=================================-" | tee -a log-install.txt
+echo -e green "┌─────────────────────────────────────────────────┐"
+echo -e red" │    ✩ Data Login Dashboard Marzban ✩        |"
+echo -e green "└─────────────────────────────────────────────────┘"
 echo "URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
-echo "URL HTTP   : http://${domain}:${port}/dashboard" | tee -a log-install.txt
 echo "USERNAME  : ${userpanel}" | tee -a log-install.txt
 echo "PASSWORD  : ${passpanel}" | tee -a log-install.txt
-echo "-=================================-" | tee -a log-install.txt
-colorized_echo green "Script telah berhasil di install Semvak"
+echo -e blue "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
+echo ""
+colorized_echo green "Alhamdulillah Script telah berhasil di install."
 rm /root/tytyd.sh
-colorized_echo blue "Sedang Menghapus admin bawaan db.sqlite"
+colorized_echo blue "Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
-echo -e "[\e[1;31mWARNING\e[0m] Reboot dulu semvak biar gk error [default y] (y/n)? "
+echo -e "[\e[1;31mWARNING\e[0m] Reboot dulu yuk beb biar gk error, (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
 exit 0
