@@ -24,7 +24,7 @@ source /etc/os-release
 os="${NAME} ${VERSION_ID}"
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
-domain=$(cat /etc/xray/domain)
+domain=$(cat /etc/data/domain)
 ip=$(curl -s ipinfo.io/ip )
 city=$(curl -s ipinfo.io/city )
 isp=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
@@ -49,21 +49,20 @@ else
 fi
 
 echo ""
-echo -e " ✩ 𝕊𝕖𝕣𝕚𝕟𝕘-𝕤𝕖𝕣𝕚𝕟𝕘 𝕚𝕤𝕥𝕚𝕘𝕙𝕗𝕒𝕣 𝕜𝕒𝕨𝕒𝕟, 𝕕𝕠𝕤𝕒 𝕜𝕚𝕥𝕒 𝕓𝕒𝕟𝕪𝕒𝕜 ✩"
+echo -e "  ✩ 𝕊𝕖𝕣𝕚𝕟𝕘-𝕤𝕖𝕣𝕚𝕟𝕘 𝕚𝕤𝕥𝕚𝕘𝕙𝕗𝕒𝕣 𝕜𝕒𝕨𝕒𝕟, 𝕕𝕠𝕤𝕒 𝕜𝕚𝕥𝕒 𝕓𝕒𝕟𝕪𝕒𝕜 ✩  "
 echo ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ Service Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${LIGHT}│${NC} ${or}➽ SYSTEM          :${NC} ${os}"
-echo -e "${LIGHT}│${NC} ${or}➽ RAM             :${NC} ${tram} Mb / ${uram} Mb"
-echo -e "${LIGHT}│${NC} ${or}➽ UPTIME          :${NC} ${uptim}"
-echo -e "${LIGHT}│${NC} ${or}➽ IP VPS          :${NC} ${ip}"
-echo -e "${LIGHT}│${NC} ${or}➽ ISP             :${NC} ${isp}"
-echo -e "${LIGHT}│${NC} ${or}➽ CITY            :${NC} ${city}"
-echo -e "${LIGHT}│${NC} ${or}➽ DOMAIN          :${NC} ${domain}"
-echo ""
+echo -e "${LIGHT}➽${NC} ${or}SYSTEM          :${NC} ${os}"
+echo -e "${LIGHT}➽${NC} ${or}RAM             :${NC} ${tram} Mb / ${uram} Mb"
+echo -e "${LIGHT}➽${NC} ${or}UPTIME          :${NC} ${uptim}"
+echo -e "${LIGHT}➽${NC} ${or}IP VPS          :${NC} ${ip}"
+echo -e "${LIGHT}➽${NC} ${or}ISP             :${NC} ${isp}"
+echo -e "${LIGHT}➽${NC} ${or}CITY            :${NC} ${city}"
+echo -e "${LIGHT}➽${NC} ${or}DOMAIN          :${NC} ${domain}"
 echo -e "${GREEN}┌─────────────────────────────────────────────────┐\033[0m${NC}"
-echo -e "\E[44;1;39m│ NGINX : ${NGINX} | FIREWALL : ${UFW} | MARZBAN : {$MARZ} | \E[0m"
+echo -e "${LIGHT}│ NGINX : ${NGINX} | FIREWALL : ${UFW} | MARZBAN : {$MARZ}033[0m${NC}"
 echo -e "${GREEN}└─────────────────────────────────────────────────┘\033[0m${NC}"
 echo ""
 echo -e "${RED}✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩\033[0m${NC}"
