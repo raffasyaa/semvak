@@ -212,7 +212,7 @@ cd
 echo -e 'profile' >> /root/.profile
 wget -O /usr/bin/profile "https://raw.githubusercontent.com/raffasyaa/semvak/main/profile";
 chmod +x /usr/bin/profile
-apt install neofetch -y
+#apt install neofetch -y
 wget -O /usr/bin/cekservice "https://raw.githubusercontent.com/raffasyaa/semvak/main/cekservice.sh"
 chmod +x /usr/bin/cekservice
 
@@ -235,8 +235,8 @@ rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
 #Install Speedtest
-curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
-sudo apt-get install speedtest -y
+#curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+#sudo apt-get install speedtest -y
 
 #install nginx
 mkdir -p /var/log/nginx
