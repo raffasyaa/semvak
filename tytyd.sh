@@ -294,19 +294,19 @@ sed -i "s/SUDO_PASSWORD = \"${passpanel}\"/# SUDO_PASSWORD = \"admin\"/" /opt/ma
 docker compose down && docker compose up -d
 cd
 profile
-echo -e green "┌─────────────────────────────────────────────────┐"
-echo -e red" │    ✩ Data Login Dashboard Marzban ✩        |"
-echo -e green "└─────────────────────────────────────────────────┘"
-echo "URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
-echo "USERNAME  : ${userpanel}" | tee -a log-install.txt
-echo "PASSWORD  : ${passpanel}" | tee -a log-install.txt
-echo -e blue "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
+colorized_echo green "┌─────────────────────────────────────────────────┐"
+colorized_echo red" │      ✩ Data Login Dashboard Marzban ✩           |"
+colorized_echo green "└─────────────────────────────────────────────────┘"
+echo "➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
+echo "➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
+echo "➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
+colorized_echo blue "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
 echo ""
-colorized_echo green "Alhamdulillah Script telah berhasil di install."
+colorized_echo green "➽ Alhamdulillah, Script telah berhasil di install."
 rm /root/tytyd.sh
-colorized_echo blue "Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
+colorized_echo blue "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
-echo -e "[\e[1;31mWARNING\e[0m] Reboot dulu yuk beb biar gk error, (y/n)? "
+echo -e "[\e[1;31mWARNING\e[0m]➽ Reboot dulu yuk beb biar gk error, (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
 exit 0
