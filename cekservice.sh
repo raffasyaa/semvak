@@ -37,14 +37,16 @@ else
 fi
 
 echo ""
+echo -e " ✩ 𝕊𝕖𝕣𝕚𝕟𝕘-𝕤𝕖𝕣𝕚𝕟𝕘 𝕚𝕤𝕥𝕚𝕘𝕙𝕗𝕒𝕣 𝕜𝕒𝕨𝕒𝕟, 𝕕𝕠𝕤𝕒 𝕜𝕚𝕥𝕒 𝕓𝕒𝕟𝕪𝕒𝕜 ✩"
+echo ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ Service Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ Semvak Nginx                :$NGINX"
-echo -e "❇️ Semvak Firewall              :$UFW"
-echo -e "❇️ Status Marzban Panel        :$MARZ"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "AUTOSCRIPT INSTALLER MARZBAN, SUDAH MULTI PORT 443 SEMVAK"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo ""
+echo -e "${GREEN}┌─────────────────────────────────────────────────┐\033[0m${NC}"
+echo -e "\E[44;1;39m│ NGINX : $NGINX | FIREWALL : $UFW | MARZBAN : $MARZ | \E[0m"
+echo -e "${GREEN}└─────────────────────────────────────────────────┘\033[0m${NC}"
+echo ""
+echo -e "${RED}✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩\033[0m${NC}"
 echo ""
 
