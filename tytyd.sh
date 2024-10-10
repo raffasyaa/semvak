@@ -324,6 +324,7 @@ echo "➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
 echo "➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
 echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
 echo ""
+clear
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
 colorized_echo blue "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
