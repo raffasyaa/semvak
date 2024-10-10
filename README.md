@@ -30,11 +30,11 @@ Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya ha
 
 # Instalasi
   ```html
- DM @BellaTrix
+ DM ME: @SaputraTech
  ```
 Pastikan anda sudah login sebagai root sebelum menjalankan perintah dibawah
  ```html
- DM @BellaTrix
+ DM ME: @SaputraTech
  ```
 
 Buka panel Marzban dengan mengunjungi https://domainmu:port/dashboard <br>
