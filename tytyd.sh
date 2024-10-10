@@ -316,15 +316,15 @@ docker compose down && docker compose up -d
 cd
 profile
 echo ""
-echo -e "${GREEN}┌─────────────────────────────────────────────────┐\033[0m${NC}"
-echo -e "${GREEN}│${NC}      ✩ Data Login Dashboard Marzban ✩         |\033[0m${NC}"
-echo -e "${GREEN}└─────────────────────────────────────────────────┘\033[0m${NC}"
-echo "➽ HTTPS    : https://${domain}:${port}/dashboard" | tee -a log-install.txt
-echo "➽ USERNAME : ${userpanel}" | tee -a log-install.txt
-echo "➽ PASSWORD : ${passpanel}" | tee -a log-install.txt
-echo -e "${CYAN}✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩\033[0m${NC}"
+echo -e "${GREEN}┌─────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
+echo -e "${GREEN}│${NC}        ✩ Akses Login Dashboard Marzban ✩          |\033[0m${NC}" | tee -a log-install.txt
+echo -e "${GREEN}└─────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
+echo "➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
+echo "➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
+echo "➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
 echo ""
-colorized_echo green "➽ Alhamdulillah beb, Script telah berhasil di install."
+colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
 colorized_echo blue "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
