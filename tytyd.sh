@@ -259,6 +259,9 @@ rm -rf /root/vnstat-2.6
 #curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
 #sudo apt-get install speedtest -y
 
+#Install Server-Optimizer
+curl -s https://raw.githubusercontent.com/Salarvand-Education/Server-Optimizer/main/Optimizer.sh
+
 #install nginx
 mkdir -p /var/log/nginx
 touch /var/log/nginx/access.log
@@ -267,7 +270,7 @@ wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/raffasyaa/sem
 wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/vps.conf"
 wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/xray.conf"
 mkdir -p /var/www/html
-echo "<pre>Setup by AutoScript Semvak</pre>" > /var/www/html/index.html
+echo "<pre>Setup by Semvak</pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
