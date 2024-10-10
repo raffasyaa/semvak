@@ -316,13 +316,13 @@ docker compose down && docker compose up -d
 cd
 profile
 echo ""
-echo -e "${GREEN}┌─────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
-echo -e "${GREEN}│${NC}        ✩ Akses Login Dashboard Marzban ✩          |\033[0m${NC}" | tee -a log-install.txt
-echo -e "${GREEN}└─────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
+echo -e "${PURPLE}┌────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
+echo -e "\E[44;1;39m            ✩ Akses Login Dashboard Marzban ✩          \E[0m" | tee -a log-install.txt
+echo -e "${PURPLE}└────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
 echo "➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
 echo "➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
 echo "➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
+echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
 echo ""
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
