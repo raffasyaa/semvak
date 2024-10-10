@@ -21,6 +21,24 @@ colorized_echo() {
         ;;
     esac
 }
+# // Code for service
+export RED='\033[0;31m';
+export GREEN='\033[0;32m';
+export YELLOW='\033[0;33m';
+export BLUE='\033[0;34m';
+export PURPLE='\033[0;35m';
+export CYAN='\033[0;36m';
+export LIGHT='\033[0;37m';
+export NC='\033[0m';
+
+# // Export Banner Status Information
+export ERROR="[${RED} ERROR ${NC}]";
+export INFO="[${YELLOW} INFO ${NC}]";
+export OKEY="[${GREEN} OKEY ${NC}]";
+export PENDING="[${YELLOW} PENDING ${NC}]";
+export SEND="[${YELLOW} SEND ${NC}]";
+export RECEIVE="[${YELLOW} RECEIVE ${NC}]";
+
 
 
 # Check if the script is run as root
@@ -75,7 +93,9 @@ if [[ "$COUNTRY_CODE" == "ID" ]]; then
     colorized_echo green "IP Indonesia terdeteksi, menggunakan repositories lokal Indonesia"
 
     # Menanyakan kepada pengguna apakah ingin menggunakan repo lokal atau repo default
-    read -p "Apakah Anda ingin menggunakan repo lokal Indonesia? (y/n): " use_local_repo
+    colorized_echo magenta "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
+    read -p "❖ Apakah Anda ingin menggunakan repo lokal Indonesia? (y/n): " use_local_repo
+    colorized_echo magenta "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
 
     if [[ "$use_local_repo" == "y" || "$use_local_repo" == "Y" ]]; then
         # Pemeriksaan OS untuk menambahkan repo yang sesuai
@@ -111,34 +131,34 @@ fi
 mkdir -p /etc/data
 
 #domain
-read -rp "Masukkan Domain: " domain
+read -rp "➣ Masukkan Domain: " domain
 echo "$domain" > /etc/data/domain
 domain=$(cat /etc/data/domain)
 
 #email
-read -rp "Masukkan Email anda: " email
+read -rp "➣ Masukkan Email anda: " email
 
 #username
 while true; do
-    read -rp "Masukkan UsernamePanel (hanya huruf dan angka): " userpanel
+    read -rp "➣ Masukkan Username Panel (No Symbol) : " userpanel
 
     # Memeriksa apakah userpanel hanya mengandung huruf dan angka
     if [[ ! "$userpanel" =~ ^[A-Za-z0-9]+$ ]]; then
-        echo "UsernamePanel hanya boleh berisi huruf dan angka. Silakan masukkan kembali."
+        echo "Username Panel hanya boleh berisi huruf dan angka Beb. Silakan masukkan kembali."
     elif [[ "$userpanel" =~ [Aa][Dd][Mm][Ii][Nn] ]]; then
-        echo "UsernamePanel tidak boleh mengandung kata 'admin'. Silakan masukkan kembali."
+        echo "Username Panel tidak boleh mengandung kata 'admin' Beb. Silakan masukkan kembali."
     else
         echo "$userpanel" > /etc/data/userpanel
         break
     fi
 done
 
-read -rp "Masukkan Password Panel: " passpanel
+read -rp "➣ Masukkan Password Panel: " passpanel
 echo "$passpanel" > /etc/data/passpanel
 
 # Function to validate port input
 while true; do
-  read -rp "Masukkan Default Port untuk Marzban Dashboard GUI (selain 443 dan 80): " port
+  read -rp "➣ Masukkan Default Port untuk Marzban Dashboard GUI (selain 443 dan 80): " port
 
   if [[ "$port" -eq 443 || "$port" -eq 80 ]]; then
     echo "Port $port tidak valid. Silakan isi dengan port selain 443 atau 80."
@@ -211,12 +231,13 @@ cd
 #profile
 echo -e 'profile' >> /root/.profile
 wget -O /usr/bin/profile "https://raw.githubusercontent.com/raffasyaa/semvak/main/profile";
+
 chmod +x /usr/bin/profile
 #apt install neofetch -y
 wget -O /usr/bin/cekservice "https://raw.githubusercontent.com/raffasyaa/semvak/main/cekservice.sh"
 chmod +x /usr/bin/cekservice
 
-#install compose
+#install docker compose
 wget -O /opt/marzban/docker-compose.yml "https://raw.githubusercontent.com/raffasyaa/semvak/main/docker-compose.yml"
 
 #Install VNSTAT
@@ -294,15 +315,16 @@ sed -i "s/SUDO_PASSWORD = \"${passpanel}\"/# SUDO_PASSWORD = \"admin\"/" /opt/ma
 docker compose down && docker compose up -d
 cd
 profile
-colorized_echo green "┌─────────────────────────────────────────────────┐"
-colorized_echo red" │      ✩ Data Login Dashboard Marzban ✩           |"
-colorized_echo green "└─────────────────────────────────────────────────┘"
-echo "➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
-echo "➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
-echo "➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
-colorized_echo blue "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
 echo ""
-colorized_echo green "➽ Alhamdulillah, Script telah berhasil di install."
+echo -e "${GREEN}┌─────────────────────────────────────────────────┐\033[0m${NC}"
+echo -e "${GREEN}│${NC}      ✩ Data Login Dashboard Marzban ✩         |\033[0m${NC}"
+echo -e "${GREEN}└─────────────────────────────────────────────────┘\033[0m${NC}"
+echo "➽ HTTPS    : https://${domain}:${port}/dashboard" | tee -a log-install.txt
+echo "➽ USERNAME : ${userpanel}" | tee -a log-install.txt
+echo "➽ PASSWORD : ${passpanel}" | tee -a log-install.txt
+echo -e "${CYAN}✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩\033[0m${NC}"
+echo ""
+colorized_echo green "➽ Alhamdulillah beb, Script telah berhasil di install."
 rm /root/tytyd.sh
 colorized_echo blue "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
