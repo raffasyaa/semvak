@@ -33,17 +33,17 @@ uptim=$(uptime -p | cut -d " " -f 2-10)
 
 # // VAR
 if [[ $(netstat -ntlp | grep -i nginx | grep -i 0.0.0.0:443 | awk '{print $4}' | cut -d: -f2 | xargs | sed -e 's/ /, /g') == '443' ]]; then
-    NGINX="${GREEN}Okay${NC}";
+    NGINX="${GREEN}Nice${NC}";
 else
     NGINX="${RED}Not Okay${NC}";
 fi
 if [[ $(netstat -ntlp | grep -i python | grep -i "0.0.0.0:${port}" | awk '{print $4}' | cut -d: -f2 | xargs | sed -e 's/ /, /g') == "${port}" ]]; then
-    MARZ="${GREEN}Okay${NC}";
+    MARZ="${GREEN}Nice${NC}";
 else
     MARZ="${RED}Not Okay${NC}";
 fi
 if [[ $(systemctl status ufw | grep -w Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == 'active' ]]; then
-    UFW="${GREEN}Okay${NC}";
+    UFW="${GREEN}Nice${NC}";
 else
     UFW="${RED}Not Okay${NC}";
 fi
@@ -51,7 +51,7 @@ fi
 echo ""
 echo -e "  ✩ 𝕊𝕖𝕣𝕚𝕟𝕘-𝕤𝕖𝕣𝕚𝕟𝕘 𝕚𝕤𝕥𝕚𝕘𝕙𝕗𝕒𝕣 𝕜𝕒𝕨𝕒𝕟, 𝕕𝕠𝕤𝕒 𝕜𝕚𝕥𝕒 𝕓𝕒𝕟𝕪𝕒𝕜 ✩  "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ Service Information ⇲             \E[0m"
+echo -e "\E[44;1;39m            ⇱ Service Information ⇲              \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "${LIGHT}➽${NC} ${or}SYSTEM          :${NC} ${os}"
 echo -e "${LIGHT}➽${NC} ${or}RAM             :${NC} ${tram} Mb / ${uram} Mb"
@@ -60,10 +60,10 @@ echo -e "${LIGHT}➽${NC} ${or}IP VPS          :${NC} ${ip}"
 echo -e "${LIGHT}➽${NC} ${or}ISP             :${NC} ${isp}"
 echo -e "${LIGHT}➽${NC} ${or}CITY            :${NC} ${city}"
 echo -e "${LIGHT}➽${NC} ${or}DOMAIN          :${NC} ${domain}"
-echo -e "${GREEN}┌─────────────────────────────────────────────────┐\033[0m${NC}"
-echo -e "${GREEN}│${NC} NGINX : ${NGINX} | FIREWALL : ${UFW} | MARZBAN : ${MARZ}|\033[0m${NC}"
-echo -e "${GREEN}└─────────────────────────────────────────────────┘\033[0m${NC}"
-echo ""
 echo -e "${CYAN}✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩\033[0m${NC}"
+echo ""
+echo -e "${GREEN}┌─────────────────────────────────────────────────┐\033[0m${NC}"
+echo -e "${GREEN}│${NC} NGINX : ${NGINX} | FIREWALL : ${UFW} | MARZBAN : ${MARZ} |\033[0m${NC}"
+echo -e "${GREEN}└─────────────────────────────────────────────────┘\033[0m${NC}"
 echo ""
 
