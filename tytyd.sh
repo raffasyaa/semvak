@@ -273,6 +273,11 @@ echo "<pre>
 Ini adalah AutoScript Marzban yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port.
 WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, gRPC sudah support untuk 443 TLS, dan penambahan autobackup via telegram bot.<br><br>Special Thanks To: @SaputraTech x @EkoLing<br><br>Buka panel Dashboard dengan mengunjungi https://domainmu:port/dashboard</pre>" > /var/www/html/index.html
 
+sudo apt install toilet -y
+sudo apt install figlet -y
+sudo apt install toilet-fonts
+sudo apt install pv
+
 #install socat
 apt install iptables -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
@@ -310,7 +315,10 @@ wget -O /root/server-Optimizer "https://raw.githubusercontent.com/Salarvand-Educ
 sudo chmod +x /root/server-Optimizer
 sudo bash /root/server-Optimizer -y
 bash server-Optimizer install
--y
+
+wget -O /usr/local/bin/skt_backup https://raw.githubusercontent.com/raffasyaa/semvak/main/backup_marzban_v1.0.sh
+sudo chmod +x /usr/local/bin/skt_backup
+sudo bash /usr/local/bin/skt_backup -y
 
 #finishing
 apt autoremove -y
