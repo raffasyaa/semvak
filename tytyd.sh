@@ -155,7 +155,7 @@ while true; do
     fi
 done
 
-read -rp "➣ Masukkan Password Panel: " passpanel
+read -rp "➣ Masukkan Password Panel (No Symbol) : " passpanel
 echo "$passpanel" > /etc/data/passpanel
 
 # Function to validate port input
@@ -309,7 +309,7 @@ sudo bash /root/warp -y
 wget -O /root/server-Optimizer "https://raw.githubusercontent.com/Salarvand-Education/Server-Optimizer/main/Optimizer.sh"
 sudo chmod +x /root/server-Optimizer
 sudo bash /root/server-Optimizer -y
-bash server-Optimizer install -y
+bash server-Optimizer install
 
 #finishing
 apt autoremove -y
@@ -327,7 +327,7 @@ cd
 profile
 echo ""
 echo -e "${GREEN}┌────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
-echo -e "\E[44;1;39m            ✩ Akses Login Dashboard Marzban ✩         \E[0m" | tee -a log-install.txt
+echo -e "\E[94;1;39m             ✩ Akses Login Dashboard Marzban ✩       \E[0m" | tee -a log-install.txt
 echo -e "${GREEN}└────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
 echo " ➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
 echo " ➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
@@ -342,7 +342,7 @@ echo ""| tee -a log-install.txt
 clear
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
-colorized_echo red "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
+colorized_echo yellow "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
 echo -e "[\e[1;31mWARNING\e[0m]➽ Reboot dulu yuk beb biar gk error, (y/n)? "
 read answer
