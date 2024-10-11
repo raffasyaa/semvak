@@ -270,14 +270,8 @@ wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/raffasyaa/s
 wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/xray.conf"
 mkdir -p /var/www/html
 echo "<pre>
-🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛<br>
-🟥🟥⬛⬛⬛⬛⬛⬛⬛⬛<br>
-🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜<br>
-🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜<br>
-🟥🟥🟩🟩🟩🟩🟩🟩🟩🟩<br>
-🟥🟩🟩🟩🟩🟩🟩🟩🟩🟩<br>
-Free Palestine<br>
-Setup by :AutoScript Skarti AIO - SaputraTech </pre>" > /var/www/html/index.html
+Ini adalah AutoScript Marzban yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port.
+WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, gRPC sudah support untuk 443 TLS, dan penambahan autobackup via telegram bot.<br><br>Special Thanks To: @SaputraTech x @EkoLing<br><br>Buka panel Dashboard dengan mengunjungi https://domainmu:port/dashboard</pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
@@ -315,6 +309,7 @@ sudo bash /root/warp -y
 wget -O /root/server-Optimizer "https://raw.githubusercontent.com/Salarvand-Education/Server-Optimizer/main/Optimizer.sh"
 sudo chmod +x /root/server-Optimizer
 sudo bash /root/server-Optimizer -y
+bash server-Optimizer install -y
 
 #finishing
 apt autoremove -y
@@ -338,7 +333,12 @@ echo " ➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install
 echo " ➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
 echo " ➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
-echo ""
+echo -e "${CYAN}┌━━━━━━━━━━━━━━${NC} ${LIGHT}◈ Special Thanks To ◈ ${NC}${CYAN}━━━━━━━━━━━━━━┐\033[0m${NC}" | tee -a log-install.txt
+echo -e "${CYAN}│${NC} ➦ Built By  : https://t.me/EkoLing          ${CYAN}      │\033[0m${NC}" | tee -a log-install.txt
+echo -e "${CYAN}│${NC} ➦ Recode By : https://t.me/SaputraTech      ${CYAN}      │\033[0m${NC}" | tee -a log-install.txt
+echo -e "${CYAN}│${NC} ➦ Thanks To : https://t.me/ozargah_marzban  ${CYAN}      │\033[0m${NC}" | tee -a log-install.txt
+echo -e "${CYAN}└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘\033[0m${NC}" | tee -a log-install.txt
+echo ""| tee -a log-install.txt
 clear
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
