@@ -74,4 +74,12 @@ echo -e "${CYAN}└━━━━━━━━━━━━━━━━━━━━�
 echo -e "${CYAN}┌─────────────${NC} ${LIGHT}◈ Service Information ◈ ${NC}${CYAN}─────────────┐\033[0m${NC}"
 echo -e "${CYAN}│${NC} NGINX : ${NGINX} | FIREWALL : ${UFW} | MARZBAN : ${MARZ} ${CYAN}  │\033[0m${NC}"
 echo -e "${CYAN}└───────────────────────────────────────────────────┘\033[0m${NC}"
-
+echo -e "${CYAN}┌━━━━━━━━━━━━━━${NC} ${LIGHT}◈ Special Thanks To ◈ ${NC}${CYAN}━━━━━━━━━━━━━━┐\033[0m${NC}"
+echo -e "${CYAN}│${NC} 1. Setup Warp+                ${CYAN}      │\033[0m${NC}"
+echo -e "${CYAN}│${NC} 2. Setup Auto Backup          ${CYAN}      │\033[0m${NC}" 
+echo -e "${CYAN}│${NC} 3. Setup Server Optimizer     ${CYAN}      │\033[0m${NC}"
+echo -e "${CYAN}└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘\033[0m${NC}"
+case $opt in
+01|1) clear ; setup-warp ;;
+03|3) clear ; setup-optimizer;;
+esac
