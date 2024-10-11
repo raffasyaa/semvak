@@ -125,7 +125,9 @@ if [[ "$COUNTRY_CODE" == "ID" ]]; then
         # Tidak melakukan apa-apa, sehingga repo bawaan VM tetap digunakan
     fi
 else
-    colorized_echo yellow "IP di luar Indonesia."
+    colorized_echo magenta "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
+    colorized_echo yellow "❖ IP VPS anda di luar negara Indonesia."
+    colorized_echo magenta "✩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━✩"
     # Lanjutkan dengan repo bawaan OS
 fi
 mkdir -p /etc/data
@@ -259,9 +261,6 @@ rm -rf /root/vnstat-2.6
 #curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
 #sudo apt-get install speedtest -y
 
-#Install Server-Optimizer
-curl -s https://raw.githubusercontent.com/Salarvand-Education/Server-Optimizer/main/Optimizer.sh
-
 #install nginx
 mkdir -p /var/log/nginx
 touch /var/log/nginx/access.log
@@ -270,7 +269,15 @@ wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/raffasyaa/sem
 wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/vps.conf"
 wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/xray.conf"
 mkdir -p /var/www/html
-echo "<pre>Setup by Semvak</pre>" > /var/www/html/index.html
+echo "<pre>
+🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛<br>
+🟥🟥⬛⬛⬛⬛⬛⬛⬛⬛<br>
+🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜<br>
+🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜<br>
+🟥🟥🟩🟩🟩🟩🟩🟩🟩🟩<br>
+🟥🟩🟩🟩🟩🟩🟩🟩🟩🟩<br>
+Free Palestine<br>
+Setup by :AutoScript Skarti AIO - SaputraTech </pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
@@ -299,10 +306,10 @@ yes | sudo ufw enable
 #install database
 wget -O /var/lib/marzban/db.sqlite3 "https://github.com/raffasyaa/semvak/raw/main/db.sqlite3"
 
-#install WARP Proxy
-wget -O /root/warp "https://raw.githubusercontent.com/hamid-gh98/x-ui-scripts/main/install_warp_proxy.sh"
-sudo chmod +x /root/warp
-sudo bash /root/warp -y 
+#Install Server-Optimizer
+wget -O /root/server-Optimizer "https://raw.githubusercontent.com/Salarvand-Education/Server-Optimizer/main/Optimizer.sh"
+sudo chmod +x /root/server-Optimizer
+sudo bash /root/server-Optimizer -y
 
 #finishing
 apt autoremove -y
@@ -319,13 +326,13 @@ docker compose down && docker compose up -d
 cd
 profile
 echo ""
-echo -e "${PURPLE}┌────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
-echo -e "\E[44;1;39m            ✩ Akses Login Dashboard Marzban ✩          \E[0m" | tee -a log-install.txt
-echo -e "${PURPLE}└────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
-echo "➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
-echo "➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
-echo "➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
-echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
+echo -e "${GREEN}┌────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
+echo -e "\E[44;1;39m            ✩ Akses Login Dashboard Marzban ✩         \E[0m" | tee -a log-install.txt
+echo -e "${GREEN}└────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
+echo " ➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
+echo " ➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
+echo " ➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
+echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
 echo ""
 clear
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
