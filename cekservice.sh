@@ -48,6 +48,13 @@ else
     UFW="${RED}Error${NC}";
 fi
 clear
+echo -e "\e[35m
+   ░██████╗██╗░░██╗░█████╗░██████╗░████████╗██╗
+   ██╔════╝██║░██╔╝██╔══██╗██╔══██╗╚══██╔══╝██║
+   ╚█████╗░█████═╝░███████║██████╔╝░░░██║░░░██║
+   ░╚═══██╗██╔═██╗░██╔══██║██╔══██╗░░░██║░░░██║
+   ██████╔╝██║░╚██╗██║░░██║██║░░██║░░░██║░░░██║
+   ╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝"
 echo ""
 echo -e "   ✩ 𝕊𝕖𝕣𝕚𝕟𝕘-𝕤𝕖𝕣𝕚𝕟𝕘 𝕚𝕤𝕥𝕚𝕘𝕙𝕗𝕒𝕣 𝕜𝕒𝕨𝕒𝕟 𝕕𝕠𝕤𝕒 𝕜𝕚𝕥𝕒 𝕓𝕒𝕟𝕪𝕒𝕜 ✩  "
 echo -e "${CYAN}┌━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┐\033[0m${NC}"
@@ -58,19 +65,19 @@ echo -e "${CYAN}│${NC} ➽ ${or}SYSTEM       :${NC} ${os}"
 echo -e "${CYAN}│${NC} ➽ ${or}RAM          :${NC} ${uram} Mb / ${tram} Mb"
 echo -e "${CYAN}│${NC} ➽ ${or}UPTIME       :${NC} ${uptim}"
 echo -e "${CYAN}│${NC} ➽ ${or}ISP          :${NC} ${isp}"
-echo -e "${CYAN}│${NC} ➽ ${or}IP VPS       :${NC} ${ip}"
 echo -e "${CYAN}│${NC} ➽ ${or}CITY         :${NC} ${city}"
+echo -e "${CYAN}│${NC} ➽ ${or}IP VPS       :${NC} ${ip}"
 echo -e "${CYAN}│${NC} ➽ ${or}HOSTNAME     :${NC} ${domain}"
 echo -e "${CYAN}│${NC} ➽ ${or}EXPIRED      :${NC} Lifetime"
 echo -e "${CYAN}│${NC} ➽ ${or}XRAY CORE    :${NC} Version 1.8.16"
 echo -e "${CYAN}└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘\033[0m${NC}"
-echo ""
-echo -e "${CYAN}┌───────────── ◈ Service Information ◈ ─────────────┐\033[0m${NC}"
+echo -e "${CYAN}┌─────────────${NC} ${LIGHT}◈ Service Information ◈ ${NC}${CYAN}─────────────┐\033[0m${NC}"
 echo -e "${CYAN}│${NC} NGINX : ${NGINX} | FIREWALL : ${UFW} | MARZBAN : ${MARZ} ${CYAN}  │\033[0m${NC}"
 echo -e "${CYAN}└───────────────────────────────────────────────────┘\033[0m${NC}"
-echo -e "${GREEN}┌━━━━━━━━━━━━━━${NC} ${CYAN}◈ Special Thanks To ◈ ${NC}${GREEN}━━━━━━━━━━━━━┐\033[0m${NC}"
-echo -e "${GREEN}│${NC} ➦ Built By  : https://t.me/EkoLing          ${GREEN}     │\033[0m${NC}"
-echo -e "${GREEN}│${NC} ➦ Recode By : https://t.me/SaputraTech      ${GREEN}     │\033[0m${NC}"
-echo -e "${GREEN}│${NC} ➦ Thanks To : https://t.me/ozargah_marzban  ${GREEN}     │\033[0m${NC}"
-echo -e "${GREEN}└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘\033[0m${NC}"
+echo ""
+echo -e "${CYAN}┌━━━━━━━━━━━━━━${NC} ${LIGHT}◈ Special Thanks To ◈ ${NC}${CYAN}━━━━━━━━━━━━━━┐\033[0m${NC}"
+echo -e "${CYAN}│${NC} ➦ Built By  : https://t.me/EkoLing          ${CYAN}      │\033[0m${NC}"
+echo -e "${CYAN}│${NC} ➦ Recode By : https://t.me/SaputraTech      ${CYAN}      │\033[0m${NC}"
+echo -e "${CYAN}│${NC} ➦ Thanks To : https://t.me/ozargah_marzban  ${CYAN}      │\033[0m${NC}"
+echo -e "${CYAN}└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘\033[0m${NC}"
 echo ""
