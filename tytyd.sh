@@ -330,7 +330,7 @@ echo ""
 clear
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
-colorized_echo blue "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
+colorized_echo red "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
 echo -e "[\e[1;31mWARNING\e[0m]➽ Reboot dulu yuk beb biar gk error, (y/n)? "
 read answer
