@@ -310,6 +310,7 @@ wget -O /root/server-Optimizer "https://raw.githubusercontent.com/Salarvand-Educ
 sudo chmod +x /root/server-Optimizer
 sudo bash /root/server-Optimizer -y
 bash server-Optimizer install
+-y
 
 #finishing
 apt autoremove -y
@@ -327,7 +328,7 @@ cd
 profile
 echo ""
 echo -e "${GREEN}┌────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
-echo -e "\E[94;1;39m             ✩ Akses Login Dashboard Marzban ✩       \E[0m" | tee -a log-install.txt
+echo -e "\E[94;1;39m             ✩ Akses Login Dashboard Marzban ✩      \E[0m" | tee -a log-install.txt
 echo -e "${GREEN}└────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
 echo " ➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
 echo " ➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
@@ -339,9 +340,10 @@ echo -e "${CYAN}│${NC} ➦ Recode By : https://t.me/SaputraTech      ${CYAN}  
 echo -e "${CYAN}│${NC} ➦ Thanks To : https://t.me/ozargah_marzban  ${CYAN}      │\033[0m${NC}" | tee -a log-install.txt
 echo -e "${CYAN}└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘\033[0m${NC}" | tee -a log-install.txt
 echo ""| tee -a log-install.txt
-case $opt in
+read -p "P, Input Option: " lol | tee -a log-install.txt
+case $lol in  | tee -a log-install.txt
 01|1) clear ; setup-warp ;;
-03|3) clear ; setup-optimizer;;
+03|3) clear ; setup-optimizer;; 
 esac
 clear
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
