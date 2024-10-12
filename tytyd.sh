@@ -269,14 +269,7 @@ wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/raffasyaa/sem
 wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/vps.conf"
 wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/xray.conf"
 mkdir -p /var/www/html
-echo "<pre>
-Ini adalah AutoScript Marzban yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port.
-WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, gRPC sudah support untuk 443 TLS, dan penambahan autobackup via telegram bot.<br><br>Special Thanks To: @SaputraTech x @EkoLing<br><br>Buka panel Dashboard dengan mengunjungi https://domainmu:port/dashboard</pre>" > /var/www/html/index.html
-
-sudo apt install toilet -y
-sudo apt install figlet -y
-sudo apt install toilet-fonts
-sudo apt install pv
+echo "<pre> AutoScript Marzban Premium, Recode By: @SaputraTech</pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
@@ -316,9 +309,10 @@ sudo chmod +x /root/server-Optimizer
 sudo bash /root/server-Optimizer -y
 bash server-Optimizer install
 
-wget -O /usr/local/bin/skt_backup https://raw.githubusercontent.com/raffasyaa/semvak/main/backup_marzban_v1.0.sh
-sudo chmod +x /usr/local/bin/skt_backup
-sudo bash /usr/local/bin/skt_backup -y
+#Install AutoBckup V1
+wget -O /usr/local/bin/skt_backup_v1 https://raw.githubusercontent.com/raffasyaa/semvak/main/backup_marzban_v1.0.sh
+sudo chmod +x /usr/local/bin/skt_backup_v1
+sudo bash /usr/local/bin/skt_backup_v1 -y
 
 #finishing
 apt autoremove -y
