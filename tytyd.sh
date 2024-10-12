@@ -305,12 +305,6 @@ wget -O /root/warp "https://raw.githubusercontent.com/hamid-gh98/x-ui-scripts/ma
 sudo chmod +x /root/warp
 sudo bash /root/warp -y 
 
-#Install Server-Optimizer
-wget -O /root/server-Optimizer "https://raw.githubusercontent.com/Salarvand-Education/Server-Optimizer/main/Optimizer.sh"
-sudo chmod +x /root/server-Optimizer
-sudo bash /root/server-Optimizer -y
-bash server-Optimizer install -y
-
 #finishing
 apt autoremove -y
 apt clean
