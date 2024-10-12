@@ -1,15 +1,18 @@
 #!/bin/bash
 
+#Install AutoBckup V1
+#Install AutoBckup V1
+#Install AutoBckup V1
+
 # Clear the terminal screen
 clear
 
 # Function to display the welcome message
 function display_welcome {
     clear
-    echo "********************************************"
-    toilet -f big --gay "SKT AUTO BACKUP" | sed 's/^/* /; s/$/ */'
-    echo -e "\e[32mSKT Backuper Marzban v1.0\e[0m" # Project name in green
-    echo "********************************************"
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+    echo -e "\e[32m      Backup Data Marzban version 1.0\e[0m" # Project name in green
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 # Function to display colorful messages
 function display_message {
@@ -38,28 +41,28 @@ function main_menu {
         display_welcome
         display_status
 
-        # Check if ArM Backuper Marzban is installed
+        # Check if SKT Backuper Marzban is installed
         if check_installation; then
-            echo -e "\e[32mBackuper Marzban is installed.\e[0m"
-            echo "1) Backup"
+            echo -e "\e[32mAutoScript Backup Marzban is installed.\e[0m"
+            echo "1) Backup "
             echo "2) Restore"
-            echo "3) Edit Bot Info"
-            echo "4) Edit Compression Method"
-            echo "5) Set Cron Job"
-            echo "6) Remove Cron Job"
+            echo "3) Setup Auto Backup"
+            echo "4) Remove Auto Backup"
+            echo "5) Edit Bot Info"
+            echo "6) Edit Compression Method"
             echo "7) Marzban Restart (It is required after restore)"
             echo "8) Uninstall"
-            echo "9) Exit"
-
-            read -p "Choose an option: " option
+            echo "9) Back To Installer"
+            echo ""
+            read -p "➽ Your Choice: " option
             
             case $option in
                 1) backup ;;
                 2) restore ;;
-                3) edit_bot_info ;;
-                4) edit_compression_method ;;
-                5) set_cron_job ;;
+                3) set_cron_job ;;
                 6) remove_cron_job ;;
+                4) edit_bot_info ;;
+                5) edit_compression_method ;;
                 7) restart_marzban ;;
                 8) uninstall ;;
                 9) exit_script ;; 
@@ -95,7 +98,7 @@ function check_installation {
 }
 # Function to display the script status
 function display_status {
-    echo "********************************************"
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 
     # Display bot information
     if [ -f "$CONFIG_FILE" ]; then
@@ -133,7 +136,7 @@ function display_status {
     detect_database
     echo -e "\e[32mDatabase Type: $DB_TYPE\e[0m"
 
-    echo "********************************************"
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 function detect_database {
     # Define the path to the .env file
@@ -244,8 +247,8 @@ function check_bot_info {
     local CHAT_ID
     while true; do
         # Get bot token and chat ID from user
-        read -p "Please enter your Bot Token: " BOT_TOKEN
-        read -p "Please enter your Chat ID: " CHAT_ID
+        read -p "➽ Masukan Chat ID : " CHAT_ID
+        read -p "➽ Masukan API Key bot : " BOT_TOKEN
 
         # Check if Bot Token is valid by calling getMe method
         BOT_CHECK=$(curl -s "https://api.telegram.org/bot$BOT_TOKEN/getMe")
@@ -278,7 +281,9 @@ function install_script {
     display_welcome
     
     # Display prompts for Telegram bot setup
-    echo -e "\e[36mPlease enter your Telegram bot information:\e[0m"
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+    echo -e "\e[36m       Auto Backup Data Marzban New  \e[0m"
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 
     local valid_bot_info=false
 
@@ -301,9 +306,7 @@ function install_script {
             } > "$CONFIG_FILE"
             valid_bot_info=true
             
-            # # Send success message to bot only if the information is valid
-            # curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" -d chat_id="$CHAT_ID" -d text="ArM Backuper Marzban : The bot was successfully detected" > /dev/null
-
+          
             echo -e "\e[32mTelegram configuration saved successfully.\e[0m"
         else
             echo -e "\e[31mInvalid Bot Token or Chat ID! Please enter correct information.\e[0m"
@@ -436,7 +439,7 @@ function check_bot_info {
     local CHAT_ID="$2"
 
     # Send a test message to check if the bot token and chat ID are valid
-    local response=$(curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" -d chat_id="$CHAT_ID" -d text="ArM Backuper Marzban : The bot was successfully detected")
+    local response=$(curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" -d chat_id="$CHAT_ID" -d text="Script Auto Install For Backuper Marzban : The bot was successfully detected ✅")
     
     if echo "$response" | grep -q '"ok":true'; then
         return 0  # Valid bot info
@@ -517,8 +520,8 @@ function backup {
     fi
 
     # Proceed with backup since both directories exist
-    ARCHIVE_NAME_1="arm_DB_backup_$(date +%Y%m%d_%H%M%S).$ARCHIVE_EXT"
-    ARCHIVE_NAME_2="arm_opt_backup_$(date +%Y%m%d_%H%M%S).$ARCHIVE_EXT"
+    ARCHIVE_NAME_1="SKT_db_backup_$(date +%Y%m%d_%H%M%S).$ARCHIVE_EXT"
+    ARCHIVE_NAME_2="SKT_opt_backup_$(date +%Y%m%d_%H%M%S).$ARCHIVE_EXT"
 
     display_message "Compressing files from $DIR_PATH_1..." "33"
     if [ "$COMPRESS_CMD" == "gzip" ]; then
@@ -620,9 +623,9 @@ function restore {
     # Set paths for the database and OPT files
     DIR_PATH_1="/var/lib/marzban/"
     DIR_PATH_2="/opt/marzban/"
-    BACKUP_PREFIX="/root/arm_DB_backup"
+    BACKUP_PREFIX="/root/SKT_db_backup"
     ARCHIVE_EXT="tar.gz"  # Or you can take this from user input
-    RESTORE_FILE="/root/Temp_Restore/arm_DB_restore.$ARCHIVE_EXT"
+    RESTORE_FILE="/root/Restore_Marzban/SKT_db_restore.$ARCHIVE_EXT"
 
     # Create temporary directory for reassembling
     TEMP_DIR="/root/Temp_Restore"
@@ -862,28 +865,28 @@ function edit_compression_method {
 function set_cron_job {
     clear
     display_welcome
-    echo "Set up Cron Job for automatic backups."
-    read -p "Enter the backup interval in minutes: " interval
+    echo "☘ Set up Cron Job for automatic backups."
+    read -p "☘ Enter the backup interval in minutes: " interval
 
     if ! [[ "$interval" =~ ^[0-9]+$ ]]; then
-        echo "Invalid input. Please enter a valid number."
+        echo "⛔ Invalid input. Please enter a valid number."
         return
     fi
 
     (crontab -l | grep -v "$SCRIPT_PATH") | crontab -
     (crontab -l ; echo "*/$interval * * * * $SCRIPT_PATH --cron-backup") | crontab -
 
-    echo "Cron job set to run the backup every $interval minutes."
+    echo "☘ Cron job set to run the backup every $interval minutes."
 }
 
 # Function to remove the cron job
 function remove_cron_job {
     clear
     display_welcome
-    echo "Removing any existing cron jobs related to ArM Backuper Marzban..."
+    echo "⛔ Removing any existing cron jobs related to Backuper Marzban..."
     (crontab -l | grep -v "$SCRIPT_PATH") | crontab -
 
-    echo -e "\e[32mCron job removed successfully.\e[0m"
+    echo -e "\e[32mCron job removed successfully ✅\e[0m"
     read -p "Press any key to return to the main menu..." -n1 -s
 }
 
@@ -892,7 +895,7 @@ function uninstall {
     clear
     display_welcome
     echo "Are you sure you want to uninstall and delete all script-related files? (y/n)"
-    read -p "Your choice: " choice
+    read -p "➽ Your choice: " choice
     if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
         (crontab -l | grep -v "$SCRIPT_PATH") | crontab -
         rm -f "$CONFIG_FILE" "$METHOD_FILE"
@@ -903,7 +906,7 @@ function uninstall {
         clear
         exit 0
     else
-        echo "Uninstallation cancelled."
+        echo "Uninstallation cancelled ❗."
     fi
 }
 
