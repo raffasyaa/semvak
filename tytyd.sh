@@ -155,7 +155,7 @@ while true; do
     fi
 done
 
-read -rp "➣ Masukkan Password Panel: " passpanel
+read -rp "➣ Masukkan Password Panel (No Symbol) : " passpanel
 echo "$passpanel" > /etc/data/passpanel
 
 # Function to validate port input
@@ -163,7 +163,7 @@ while true; do
   read -rp "➣ Masukkan Default Port untuk Marzban Dashboard GUI (selain 443 dan 80): " port
 
   if [[ "$port" -eq 443 || "$port" -eq 80 ]]; then
-    echo "Port $port tidak valid. Silakan isi dengan port selain 443 atau 80."
+    echo "Port $port tidak valid beb. Silakan isi port selain 443 atau 80."
   else
     echo "Port yang Anda masukkan adalah: $port"
     break
@@ -269,9 +269,7 @@ wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/raffasyaa/sem
 wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/vps.conf"
 wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/xray.conf"
 mkdir -p /var/www/html
-echo "<pre>
-Ini adalah AutoScript Marzban yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port.
-WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, gRPC sudah support untuk 443 TLS, dan penambahan autobackup via telegram bot.<br><br>Special Thanks To: @SaputraTech x @EkoLing<br><br>Buka panel Dashboard dengan mengunjungi https://domainmu:port/dashboard</pre>" > /var/www/html/index.html
+echo "<pre>Auto Script Installer Marzban, Build By : @SaputraTech</pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
@@ -321,9 +319,9 @@ cd
 profile
 echo ""
 echo -e "${GREEN}┌────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
-echo -e "\E[44;1;39m            ✩ Akses Login Dashboard Marzban ✩         \E[0m" | tee -a log-install.txt
+echo -e " \E[44;1;39m           ✩ Akses Login Dashboard Marzban ✩        \E[0m" | tee -a log-install.txt
 echo -e "${GREEN}└────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
-echo " ➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
+echo " ➽ URL HTTPS : ${domain}:${port}/dashboard" | tee -a log-install.txt
 echo " ➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
 echo " ➽ PASSWORD  : ${passpanel}" | tee -a log-install.txt
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a log-install.txt
@@ -334,10 +332,12 @@ echo -e "${CYAN}│${NC} ➦ Thanks To : https://t.me/ozargah_marzban  ${CYAN}  
 echo -e "${CYAN}└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘\033[0m${NC}" | tee -a log-install.txt
 echo ""| tee -a log-install.txt
 clear
+echo -e "${YELLOW}┌────────────────────────────────────────────────────┐\033[0m${NC}"
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
-colorized_echo red "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
+colorized_echo magenta "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
+echo -e "${YELLOW}└────────────────────────────────────────────────────┘\033[0m${NC}"
 echo -e "[\e[1;31mWARNING\e[0m]➽ Reboot dulu yuk beb biar gk error, (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
