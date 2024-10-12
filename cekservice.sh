@@ -35,17 +35,17 @@ uptim=$(uptime -p | cut -d " " -f 2-10)
 if [[ $(netstat -ntlp | grep -i nginx | grep -i 0.0.0.0:443 | awk '{print $4}' | cut -d: -f2 | xargs | sed -e 's/ /, /g') == '443' ]]; then
     NGINX="${GREEN}Nice${NC}";
 else
-    NGINX="${RED}Error${NC}";
+    NGINX="${RED}Dead${NC}";
 fi
 if [[ $(netstat -ntlp | grep -i python | grep -i "0.0.0.0:${port}" | awk '{print $4}' | cut -d: -f2 | xargs | sed -e 's/ /, /g') == "${port}" ]]; then
     MARZ="${GREEN}Nice${NC}";
 else
-    MARZ="${RED}Error${NC}";
+    MARZ="${RED}Dead${NC}";
 fi
 if [[ $(systemctl status ufw | grep -w Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == 'active' ]]; then
     UFW="${GREEN}Nice${NC}";
 else
-    UFW="${RED}Error${NC}";
+    UFW="${RED}Dead${NC}";
 fi
 clear
 echo -e "\e[35m
