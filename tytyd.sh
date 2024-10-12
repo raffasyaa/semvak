@@ -155,7 +155,7 @@ while true; do
     fi
 done
 
-read -rp "➣ Masukkan Password Panel (No Symbol) : " passpanel
+read -rp "➣ Masukkan Password Panel: " passpanel
 echo "$passpanel" > /etc/data/passpanel
 
 # Function to validate port input
@@ -269,7 +269,9 @@ wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/raffasyaa/sem
 wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/vps.conf"
 wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/raffasyaa/semvak/main/xray.conf"
 mkdir -p /var/www/html
-echo "<pre> AutoScript Marzban Premium, Recode By: @SaputraTech</pre>" > /var/www/html/index.html
+echo "<pre>
+Ini adalah AutoScript Marzban yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port.
+WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, gRPC sudah support untuk 443 TLS, dan penambahan autobackup via telegram bot.<br><br>Special Thanks To: @SaputraTech x @EkoLing<br><br>Buka panel Dashboard dengan mengunjungi https://domainmu:port/dashboard</pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
@@ -307,12 +309,7 @@ sudo bash /root/warp -y
 wget -O /root/server-Optimizer "https://raw.githubusercontent.com/Salarvand-Education/Server-Optimizer/main/Optimizer.sh"
 sudo chmod +x /root/server-Optimizer
 sudo bash /root/server-Optimizer -y
-bash server-Optimizer install
-
-#Install AutoBckup V1
-wget -O /usr/local/bin/skt_backup_v1 https://raw.githubusercontent.com/raffasyaa/semvak/main/backup_marzban_v1.0.sh
-sudo chmod +x /usr/local/bin/skt_backup_v1
-sudo bash /usr/local/bin/skt_backup_v1 -y
+bash server-Optimizer install -y
 
 #finishing
 apt autoremove -y
@@ -330,7 +327,7 @@ cd
 profile
 echo ""
 echo -e "${GREEN}┌────────────────────────────────────────────────────┐\033[0m${NC}" | tee -a log-install.txt
-echo -e "\E[44;1;39m             ✩ Akses Login Dashboard Marzban ✩      \E[0m" | tee -a log-install.txt
+echo -e "\E[44;1;39m            ✩ Akses Login Dashboard Marzban ✩         \E[0m" | tee -a log-install.txt
 echo -e "${GREEN}└────────────────────────────────────────────────────┘\033[0m${NC}" | tee -a log-install.txt
 echo " ➽ URL HTTPS : https://${domain}:${port}/dashboard" | tee -a log-install.txt
 echo " ➽ USERNAME  : ${userpanel}" | tee -a log-install.txt
@@ -345,7 +342,7 @@ echo ""| tee -a log-install.txt
 clear
 colorized_echo green "➽ Alhamdulillah Beb, Script telah berhasil di install."
 rm /root/tytyd.sh
-colorized_echo yellow "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
+colorized_echo red "➽ Sabar beb, Sedang Menghapus admin bawaan db.sqlite"
 marzban cli admin delete -u admin -y
 echo -e "[\e[1;31mWARNING\e[0m]➽ Reboot dulu yuk beb biar gk error, (y/n)? "
 read answer
