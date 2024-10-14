@@ -1,11 +1,8 @@
-# Info Tytyd
+# Info Misi
 
-Ini adalah [Marzban](https://github.com/Gozargah/Marzban) yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port. </br>
-WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, contoh /enter-your-custom-path/trojan </br>
-gRPC sudah support untuk 443 TLS </br>
-
-Disclaimer: Proyek ini hanya untuk pembelajaran dan komunikasi pribadi, mohon jangan menggunakannya untuk tujuan ilegal. </br>
-Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya hanya edit sedikit untuk instalasi sederhana bagi pemula . </br>
+Disclaimer: Proyek ini hanya untuk pembelajaran dan komunikasi pribadi, mohon jangan menggunakannya untuk tujuan ilegal.  </br>
+Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), Autoscript ini sudah support multi port 80 & 443.  </br>
+ </br>
 
 # Special Thanks to
 - [Gozargah](https://github.com/Gozargah/Marzban)
@@ -19,6 +16,11 @@ Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya ha
 - VMess
 - Trojan
 
+# List Transport yang support
+- Websocket
+- Httpupgrade
+- GRPC
+
 # Yang harus dipersiapkan
 - VPS dengan minimal spek 1 Core 1 GB ram
 - Domain yang sudah di pointing ke CloudFlare
@@ -26,16 +28,33 @@ Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya ha
 
 # Sistem VM yang dapat digunakan
 - Debian 11 [**RECOMMENDED**] </br>
-- Ubuntu 20.04 </br>
+- Ubuntu 20.04 [**RECOMMENDED**] </br>
 
-# Instalasi
-  ```html
- DM ME: @SaputraTech
- ```
+# Instalasi AutoScript
 Pastikan anda sudah login sebagai root sebelum menjalankan perintah dibawah
+  ```html
+ apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && reboot
+ ```
+Saat Setup DOMAIN wajib menggunakan domain sendiri, dan pastikan sudah di pointing ke CloudFlare
  ```html
- DM ME: @SaputraTech
+ wget https://raw.githubusercontent.com/raffasyaa/Semvak/main/tytyd.sh && chmod +x tytyd.sh && ./tytyd.sh
  ```
 
 Buka panel Marzban dengan mengunjungi https://domainmu:port/dashboard <br>
 
+# Instalasi Auto Backup
+Silahkan buat bot terlebih dahulu di @Botfather dan ambil Chat ID di @userinfobot
+  ```html
+ bash <(curl -Ls https://github.com/raffasyaa/Backup-Semvak/raw/main/semvak1.sh)
+ ```
+
+# Instalasi Optimizer-Server
+Berfungsi untuk menstabilkan koneksi pada server
+  ```html
+ bash <(curl -s https://raw.githubusercontent.com/raffasyaa/Semvak-Optimizer-pepes/main/Tytyd_OP.sh) install
+ ```
+# Jika Script ini membantu jangan lupa sawerannya 😁
+
+All Payment : https://traktir.saputratech.web.id </br>
+All Payment : https://traktir.saputratech.web.id </br>
+All Payment : https://traktir.saputratech.web.id </br>
