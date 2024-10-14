@@ -53,6 +53,11 @@ Berfungsi untuk menstabilkan koneksi pada server
   ```html
  bash <(curl -s https://raw.githubusercontent.com/raffasyaa/Semvak-Optimizer-pepes/main/Tytyd_OP.sh) install
  ```
+Uninstall Script
+  ```html
+ bash <(curl -s https://raw.githubusercontent.com/raffasyaa/Semvak-Optimizer-pepes/main/Tytyd_OP.sh) uninstall
+ ```
+
 # Jika Script ini membantu jangan lupa sawerannya 😁
 
 All Payment : https://traktir.saputratech.web.id </br>
