@@ -1,8 +1,11 @@
 # Info Misi
 
-Disclaimer: Proyek ini hanya untuk pembelajaran dan komunikasi pribadi, mohon jangan menggunakannya untuk tujuan ilegal.  </br>
-Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), Autoscript ini sudah support multi port 80 & 443.  </br>
- </br>
+Ini adalah [Marzban](https://github.com/Gozargah/Marzban) yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port. </br>
+WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, contoh /enter-your-custom-path/trojan </br>
+gRPC sudah support untuk 443 TLS </br>
+
+Disclaimer: Proyek ini hanya untuk pembelajaran dan komunikasi pribadi, mohon jangan menggunakannya untuk tujuan ilegal. </br>
+Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya hanya edit sedikit untuk instalasi sederhana bagi pemula . </br>
 
 # Special Thanks to
 - [Gozargah](https://github.com/Gozargah/Marzban)
