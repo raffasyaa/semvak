@@ -13,3 +13,4 @@ echo -e "\e[33m
 echo -e ""
 cekservice
 cat /root/log-install.txt
+clear
