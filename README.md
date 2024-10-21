@@ -1,8 +1,6 @@
 # Info Misi
 
-Ini adalah [Marzban](https://github.com/Gozargah/Marzban) yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port. </br>
-WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, contoh /enter-your-custom-path/trojan </br>
-gRPC sudah support untuk 443 TLS </br>
+Marzen is a proxy management tool that provides a simple and easy-to-use user interface for managing hundreds of proxy accounts. This tool is modified version of Marzban and forked version of MarLing adding Nginx for WebSocket, Http Upgrade, and gRPC single port support.
 
 Disclaimer: Proyek ini hanya untuk pembelajaran dan komunikasi pribadi, mohon jangan menggunakannya untuk tujuan ilegal. </br>
 Credit aplikasi full to [Gozargah Marzban](https://github.com/Gozargah), saya hanya edit sedikit untuk instalasi sederhana bagi pemula . </br>
