@@ -1,4 +1,8 @@
-# Info Misi
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Capriola&size=40&duration=4000&pause=450&color=00FFFF&background=FFFFAA0&center=true&random=false&width=600&height=100&lines= Recode By SaputraTech;Marzban Auto Installer" />
+</p>
+
+# Info Script
 
 Marzen is a proxy management tool that provides a simple and easy-to-use user interface for managing hundreds of proxy accounts. This tool is modified version of Marzban and forked version of MarLing adding Nginx for WebSocket, Http Upgrade, and gRPC single port support.
 
